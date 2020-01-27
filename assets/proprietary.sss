@@ -1,0 +1,80 @@
+@import "./base.sss"
+
+// proprietary global sss goes here
+
+@define-mixin card-border
+	border: 1px solid $bg--2
+
+$outer_width: 841px
+$outer_height: 1337px
+$frame_width: 759px
+$frame_height: 1255px
+$target_width: 676px
+$target_height: 1172px
+
+$view_multiplier: 2.125
+$print_multiplier: 4.25
+
+section#cards
+	@mixin big-vert-padding
+	background: $bg--1
+	.container
+
+		header
+			display: flex
+			color: $bg--2
+			margin-bottom: 1em
+			align-items: center
+			h1
+				margin-right: 1em
+
+		.card
+			.outer
+				@mixin card-border
+				background: white
+				.frame
+					@mixin card-border
+					position: relative
+					.target
+						padding: 1px
+						@mixin card-border
+						@util center
+						border-color: $bg--1
+		.card.real
+			width: calc( $outer_width / $print_multiplier )
+			.outer
+				font-size: 60%
+				height: calc( $outer_height / $print_multiplier )
+				.frame
+					width: calc( $frame_width / $print_multiplier )
+					height: calc( $frame_height / $print_multiplier )
+					.target
+						width: calc( $target_width / $print_multiplier )
+						height: calc( $target_height / $print_multiplier )
+
+		.card.view
+			width: calc( $outer_width / $view_multiplier )
+			.outer
+				font-size: 120%
+				height: calc( $outer_height / $view_multiplier )
+				.frame
+					width: calc( $frame_width / $view_multiplier )
+					height: calc( $frame_height / $view_multiplier )
+					.target
+						width: calc( $target_width / $view_multiplier )
+						height: calc( $target_height / $view_multiplier )
+
+		.card.print
+			width: $outer_width
+			.outer
+				font-size: 240%
+				height: $outer_height
+				border: none
+				.frame
+					width: $frame_width
+					height: $frame_height
+					border: none
+					.target
+						width: $target_width
+						height: $target_height
+						border: none
