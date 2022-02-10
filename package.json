@@ -24,7 +24,7 @@
     "@nuxtjs/router": "^1.5.0",
     "css-mqpacker": "^6.0.2",
     "image-webpack-loader": "^4.2.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "postcss-color-short": "^0.2.4",
     "postcss-combine-duplicated-selectors": "^5.0.2",
     "postcss-easy-import": "^3.0.0",
